@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+    <name>mod_etdnewsletter</name>
+    <author>ETD Solutions</author>
+    <creationDate>Septembre 2016</creationDate>
+    <copyright>(C) 2016 ETD Solutions. All rights reserved.</copyright>
+    <license>Utilisation réservée aux clients d'ETD Solutions.</license>
+    <authorEmail>contact@etd-solutions.com</authorEmail>
+    <authorUrl>etd-solutions.com</authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_ETDNEWSLETTER_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_etdnewsletter">mod_etdnewsletter.php</filename>
+        <folder>assets</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+    </files>
+    <languages>
+        <language tag="fr-FR">language/fr-FR/fr-FR.mod_etdnewsletter.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.mod_etdnewsletter.sys.ini</language>
+    </languages>
+    <help key="JHELP_EXTENSIONS_MODULE_MANAGER_BANNERS"/>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="show_firstname"
+                        type="radio"
+                        label="MOD_ETDNEWSLETTER_FIELD_SHOW_FIRSTNAME_LABEL"
+                        description="MOD_ETDNEWSLETTER_FIELD_SHOW_FIRSTNAME_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_lastname"
+                        type="radio"
+                        label="MOD_ETDNEWSLETTER_FIELD_SHOW_LASTNAME_LABEL"
+                        description="MOD_ETDNEWSLETTER_FIELD_SHOW_LASTNAME_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_labels"
+                        type="radio"
+                        label="MOD_ETDNEWSLETTER_FIELD_SHOW_LABELS_LABEL"
+                        description="MOD_ETDNEWSLETTER_FIELD_SHOW_LABELS_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="header_text"
+                        type="textarea"
+                        label="MOD_ETDNEWSLETTER_FIELD_HEADER_LABEL"
+                        description="MOD_ETDNEWSLETTER_FIELD_HEADER_DESC"
+                        filter="safehtml"
+                        rows="2"
+                        cols="40"
+                />
+
+                <field
+                        name="footer_text"
+                        type="textarea"
+                        label="MOD_ETDNEWSLETTER_FIELD_FOOTER_LABEL"
+                        description="MOD_ETDNEWSLETTER_FIELD_FOOTER_DESC"
+                        filter="safehtml"
+                        rows="3"
+                        cols="40"
+                />
+
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                        name="layout"
+                        type="modulelayout"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+                />
+
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea" rows="3"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                />
+
+                <field
+                        name="cache"
+                        type="list"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC"
+                        default="1"
+                >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                        name="cache_time"
+                        type="text"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+                        default="900"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
